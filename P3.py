@@ -9,12 +9,12 @@ def gen_permutations_repeat(digits,n):
 def gen_permutations_norepeat(digits,n):
     count = 0
     for perm in permutations(digits,n):
-        print(*perm) 
+        print(*perm)
         count+=1
     return count
 #main
 digits = list(input("Enter the digits: "))
-repeat = input("Allow repetition? (yes/no)")
+repeat = input("Allow repetition? (yes/no)").lower()
 if(repeat=="yes"):
     print("Permutation with repetition: ")
     t = gen_permutations_repeat(digits,len(digits))
