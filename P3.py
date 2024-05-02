@@ -14,12 +14,13 @@ def gen_permutations_norepeat(digits,n):
     return count
 #main
 digits = list(input("Enter the digits: "))
+length = int(input("Enter the length of permutations to generate: "))
 repeat = input("Allow repetition? (yes/no)").lower()
 if(repeat=="yes"):
     print("Permutation with repetition: ")
-    t = gen_permutations_repeat(digits,len(digits))
+    t = gen_permutations_repeat(digits,length)
     print("Total permutations with repetition : ",t)
 else:
     print("Permutation without repetition: ")
-    t1 = gen_permutations_norepeat(digits,len(digits))
+    t1 = gen_permutations_norepeat(digits,length)
     print("Total permutations without repetition : ",t1)
