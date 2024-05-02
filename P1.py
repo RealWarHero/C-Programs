@@ -1,9 +1,12 @@
 from itertools import chain, combinations, product
 
 class SET:
-    def init(self):
+    def __init__(self):
         self.elements = set()
-
+        
+    def add_elements(self,elements):
+        self.elements.update(elements)
+        
     def is_member(self, element):
         return element in self.elements
 
@@ -33,7 +36,8 @@ class SET:
 
 # Menu driven program
 def menu():
-    print("1. Add element to set")
+    print()
+    print("\n1. Add element to set")
     print("2. Check if element is member")
     print("3. List powerset")
     print("4. Check if one set is subset of another")
@@ -45,10 +49,14 @@ def menu():
     print("10. Cartesian product")
     print("11. Exit")
 
-# Example usage:
+l1 = [1,2,3,4]
+l2 = [3,4,5,6]
 set1 = SET()
+set1.add_elements(l1)
 set2 = SET()
+set2.add_elements(l2)
 universal_set = SET()
+universal_set.add_elements(l1+l2)
 
 while True:
     menu()
